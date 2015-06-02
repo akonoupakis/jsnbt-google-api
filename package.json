@@ -1,0 +1,22 @@
+{
+  "name": "jsnbt-google-api",
+  "description": "A google api wrapper for the jsnbt cms",
+  "version": "1.0.1",
+  "author": {
+    "name": "Apostolis Konoupakis",
+    "email": "konoupakis@gmail.com"
+  },
+  "main": "src/app/index.js",
+  "files": [
+    "src/app/**",
+	"src/cfg/**",
+    "src/web/admin/**",
+    "scripts/**"
+  ],
+  "scripts": {
+    "install": "node scripts/install.js",
+    "postuninstall": "node scripts/uninstall.js"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}

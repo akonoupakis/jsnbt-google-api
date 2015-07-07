@@ -1,4 +1,4 @@
-{
+﻿{
   "name": "jsnbt-google-api",
   "description": "A google api wrapper for the jsnbt cms",
   "version": "1.0.3",
@@ -14,7 +14,7 @@
     "url": "https://github.com/akonoupakis/jsnbt-google-api/issues",
     "email": "konoupakis@gmail.com"
   },
-   "licenses": [
+  "licenses": [
     {
       "type": "MIT"
     }
@@ -22,7 +22,7 @@
   "main": "src/app/index.js",
   "files": [
     "src/app/**",
-	"src/cfg/**",
+    "src/cfg/**",
     "src/web/admin/**",
     "scripts/**"
   ],

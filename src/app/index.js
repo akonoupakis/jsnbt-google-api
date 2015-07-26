@@ -10,12 +10,16 @@ module.exports = {
         app = application;
     },
 
-    getConfig: function () {
-        return require('../cfg/config.js');
+    getName: function () {
+        return require('../../package.json').name;
     },
 
     getVersion: function () {
         return require('../../package.json').version;
+    },
+
+    getConfig: function () {
+        return require('../cfg/config.js');
     },
 
     callApi: function (server, ctx, serviceName, fnName, fields, callback) {

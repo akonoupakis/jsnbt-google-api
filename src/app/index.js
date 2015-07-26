@@ -26,9 +26,9 @@ module.exports = {
 
         // callsTo: https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=500&types=food&name=cruise&key=XXX
 
-        ctx.dpd.settings.getCached({
+        ctx.db.settings.getCached({
             domain: 'gApi'
-        }, function (results, err) {
+        }, function (err, results) {
             if (err) {
                 callback(err, null);
             }

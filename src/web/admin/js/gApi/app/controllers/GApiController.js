@@ -1,7 +1,7 @@
 ﻿; (function () {
     "use strict";
 
-    angular.module("jsnbt-google-api")
+    angular.module("jsnbt")
         .controller('GApiController', function ($scope, $controller, $location, $logger, $timeout) {
 
             var logger = $logger.create('GApiController');

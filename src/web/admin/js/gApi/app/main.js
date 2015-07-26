@@ -1,7 +1,7 @@
 ﻿; (function () {
     "use strict";
 
-    angular.module("jsnbt-google-api", ['ngRoute'])
+    angular.module("jsnbt")
     .config(function ($routeProvider) {
         $routeProvider.
             when('/modules/gApi', {

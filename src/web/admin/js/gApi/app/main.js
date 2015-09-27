@@ -3,10 +3,14 @@
 
     angular.module("jsnbt-google-api", ['ngRoute'])
     .config(function ($routeProvider) {
-        $routeProvider.
+
+        var router = angular.getRouter($routeProvider);
+
+        router.
             when('/modules/gApi', {
-                templateUrl: 'tmpl/gApi/pages/main.html',
                 controller: 'GApiController',
+                baseTemplateUrl: 'tmpl/core/base/settings.html',
+                templateUrl: 'tmpl/gApi/settings.html',
                 section: 'gApi',
                 domain: 'gApi'
             });

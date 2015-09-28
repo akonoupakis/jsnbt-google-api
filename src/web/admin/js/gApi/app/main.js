@@ -4,16 +4,16 @@
     angular.module("jsnbt-google-api", ['ngRoute'])
     .config(function ($routeProvider) {
 
-        var router = angular.getRouter($routeProvider);
+        var TEMPLATE_BASE = jsnbt.TEMPLATE_BASE;
 
-        router.
-            when('/modules/gApi', {
-                controller: 'GApiController',
-                baseTemplateUrl: 'tmpl/core/base/settings.html',
-                templateUrl: 'tmpl/gApi/settings.html',
-                section: 'gApi',
-                domain: 'gApi'
-            });
+        var router = new jsnbt.router('gApi', $routeProvider);
+        
+        router.when('/modules/gApi', function (x) {
+            x.section('gApi');
+            x.baseTemplate(TEMPLATE_BASE.settings);
+            x.template('tmpl/gApi/settings.html');
+            x.controller('GApiController');
+        });
     });
 
 })();

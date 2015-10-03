@@ -4,7 +4,7 @@
     angular.module("jsnbt-google-api", ['ngRoute'])
     .config(function ($routeProvider) {
 
-        var TEMPLATE_BASE = jsnbt.TEMPLATE_BASE;
+        var TEMPLATE_BASE = jsnbt.constants.TEMPLATE_BASE;
 
         var router = new jsnbt.router('gApi', $routeProvider);
         

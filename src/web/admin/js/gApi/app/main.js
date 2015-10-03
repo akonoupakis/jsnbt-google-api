@@ -6,7 +6,7 @@
 
         var TEMPLATE_BASE = jsnbt.constants.TEMPLATE_BASE;
 
-        var router = new jsnbt.router('gApi', $routeProvider);
+        var router = new jsnbt.ViewRouter('gApi', $routeProvider);
         
         router.when('/modules/gApi', function (x) {
             x.section('gApi');

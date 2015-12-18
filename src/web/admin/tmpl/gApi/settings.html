@@ -5,10 +5,15 @@
     </div>
 </div>
 
+<div class="bs-callout bs-callout-info">
+    <p>Add the google api key to enable outgoing api requests.</p>
+    <p>Use as:<br /><code>var gApi = require('jsnbt-google-api');<br />gApi.callApi(server, ctx, serviceName, fnName, options)</code></p>
+</div>
+
 <hr />
 
 <div class="row" id="settings-key" data-scrollspy="api key">
-    <ctrl-text class="col-sm-12" ng-model="settings.apiKey" ng-required="true" ng-auto-focus="true" ng-label="Api Key"></ctrl-text>
+    <ctrl-text class="col-sm-12" ng-model="settings.apiKey" ng-auto-focus="true" ng-label="api key"></ctrl-text>
 </div>
 
 <hr />

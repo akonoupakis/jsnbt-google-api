@@ -30,51 +30,53 @@ module.exports = {
 
         // callsTo: https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522,151.1957362&radius=500&types=food&name=cruise&key=XXX
 
-        ctx.db.settings.getCached({
-            domain: 'gApi'
-        }, function (err, results) {
-            if (err) {
-                callback(err, null);
+        var settingsStore = server.db.createStore('settings');
+        settingsStore.get(function (x) {
+            x.query({
+                domain: 'gApi'
+            });
+            x.single();
+            x.cached();
+        }, function (err, settings) {
+            if (err)
+                return callback(err, null);
+
+            if (settings && settings.data && settings.data.apiKey) {
+                var apiKey = settings.data.apiKey;
+
+                var queryString = [];
+
+                for (var name in fields)
+                    queryString.push(name + '=' + fields[name]);
+
+                queryString.push('key=' + apiKey);
+
+                var request = https.request({
+                    host: 'maps.googleapis.com',
+                    port: 443,
+                    path: '/maps/api/' + serviceName + '/' + fnName + '/json?' + queryString.join('&') + '&key=' + apiKey,
+                    method: 'GET'
+                }, function (res) {
+
+                    var data = '';
+                    res.on('data', function (d) {
+                        data += d;
+                    });
+
+                    res.on('end', function () {
+                        callback(null, data);
+                    });
+
+                });
+
+                request.on('error', function (error) {
+                    callback(error, null);
+                });
+
+                request.end();
             }
             else {
-                var settings = results.length > 0 ? results[0] : undefined;
-                if (settings && settings.data && settings.data.apiKey) {
-                    var apiKey = settings.data.apiKey;
-
-                    var queryString = [];
-
-                    for (var name in fields)
-                        queryString.push(name + '=' + fields[name]);
-
-                    queryString.push('key=' + apiKey);
-
-                    var request = https.request({
-                        host: 'maps.googleapis.com',
-                        port: 443,
-                        path: '/maps/api/' + serviceName + '/' + fnName + '/json?' + queryString.join('&') + '&key=' + apiKey,
-                        method: 'GET'
-                    }, function (res) {
-
-                        var data = '';
-                        res.on('data', function (d) {
-                            data += d;
-                        });
-
-                        res.on('end', function () {
-                            callback(null, data);
-                        });
-
-                    });
-
-                    request.on('error', function (error) {
-                        callback(error, null);
-                    });
-
-                    request.end();
-                }
-                else {
-                    callback(new Error('ApiKey undefined'), null);
-                }
+                callback(new Error('ApiKey undefined'), null);
             }
 
         });

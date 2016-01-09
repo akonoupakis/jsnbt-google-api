@@ -1,30 +1,30 @@
-﻿{
-  "name": "jsnbt-google-api",
-  "description": "A google api wrapper for the jsnbt cms",
-  "version": "1.0.121",
-  "author": {
-    "name": "Apostolis Konoupakis",
-    "email": "konoupakis@gmail.com"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/akonoupakis/jsnbt-google-api.git"
-  },
-  "bugs": {
-    "url": "https://github.com/akonoupakis/jsnbt-google-api/issues",
-    "email": "konoupakis@gmail.com"
-  },
-  "licenses": [
-    {
-      "type": "MIT"
-    }
-  ],
-  "main": "src/app/index.js",
-  "files": [
-    "src/app/**",
-    "src/cfg/**",
-    "src/web/**"
-  ],
-  "dependencies": {},
-  "devDependencies": {}
+{
+	"name": "jsnbt-google-api",
+	"description": "A google api wrapper for the jsnbt cms",
+	"version": "1.0.122",
+	"author": {
+		"name": "Apostolis Konoupakis",
+		"email": "konoupakis@gmail.com"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/akonoupakis/jsnbt-google-api.git"
+	},
+	"bugs": {
+		"url": "https://github.com/akonoupakis/jsnbt-google-api/issues",
+		"email": "konoupakis@gmail.com"
+	},
+	"licenses": [
+		{
+			"type": "MIT"
+		}
+	],
+	"main": "src/app/index.js",
+	"files": [
+		"src/app/**",
+		"src/cfg/**",
+		"src/web/**"
+	],
+	"dependencies": {},
+	"devDependencies": {}
 }

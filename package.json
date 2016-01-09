@@ -1,7 +1,7 @@
 {
 	"name": "jsnbt-google-api",
 	"description": "A google api wrapper for the jsnbt cms",
-	"version": "1.0.122-pre3",
+	"version": "1.0.122",
 	"author": {
 		"name": "Apostolis Konoupakis",
 		"email": "konoupakis@gmail.com"

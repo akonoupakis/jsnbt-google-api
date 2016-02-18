@@ -1,12 +1,12 @@
 ﻿; (function () {
     "use strict";
 
-    angular.module("jsnbt-google-api", ['ngRoute'])
-    .config(function ($routeProvider) {
+    angular.module("jsnbt-google-api", ['ngPathRouter'])
+    .config(['$routerProvider', function ($routerProvider) {
 
         var TEMPLATE_BASE = jsnbt.constants.TEMPLATE_BASE;
 
-        var router = new jsnbt.ViewRouter('gApi', $routeProvider);
+        var router = new jsnbt.ViewRouter('gApi', $routerProvider);
         
         router.when('/modules/gApi', function (x) {
             x.section('gApi');
@@ -14,6 +14,6 @@
             x.template('tmpl/gApi/settings.html');
             x.controller('GApiController');
         });
-    });
+    }]);
 
 })();
